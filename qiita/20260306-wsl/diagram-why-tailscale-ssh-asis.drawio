@@ -1,0 +1,65 @@
+<mxfile host="65bd71144e">
+    <diagram name="AsIs_外出先と自宅で環境差分あり" id="0">
+        <mxGraphModel dx="895" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0">
+                    <Object as="cells">
+                        <Object as="u">
+                            <Object geometry="&lt;mxGeometry x=&quot;20&quot; y=&quot;40&quot; width=&quot;160&quot; height=&quot;120&quot;/&gt;"/>
+                        </Object>
+                    </Object>
+                </mxCell>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="60" value="外出先linuxと設定に差分あり" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="460" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="差分" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;strokeWidth=1.8;dashed=1;fontSize=10;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" target="o7bFWhGSpsW3cH02EV6H-64" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="475" y="450"/>
+                            <mxPoint x="205" y="450"/>
+                        </Array>
+                        <mxPoint x="475" y="365" as="sourcePoint"/>
+                        <mxPoint x="170" y="372.4999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="P1yoBSOdCuZ27dbMmFcD-81" value="外出先WindowsノートPC" style="swimlane;startSize=24;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="80" width="230" height="325" as="geometry"/>
+                </mxCell>
+                <mxCell id="P1yoBSOdCuZ27dbMmFcD-82" value="WezTerm（ターミナル）" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="P1yoBSOdCuZ27dbMmFcD-81" vertex="1">
+                    <mxGeometry x="15" y="35" width="200" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="P1yoBSOdCuZ27dbMmFcD-83" value="WSL2" style="swimlane;startSize=24;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="P1yoBSOdCuZ27dbMmFcD-81" vertex="1">
+                    <mxGeometry x="15" y="110" width="200" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="P1yoBSOdCuZ27dbMmFcD-84" value="Ubuntu (Linux)" style="swimlane;startSize=24;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#333333;" parent="P1yoBSOdCuZ27dbMmFcD-83" vertex="1">
+                    <mxGeometry x="15" y="35" width="170" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="P1yoBSOdCuZ27dbMmFcD-85" value="tmux" style="swimlane;startSize=22;fillColor=#e1f5e1;strokeColor=#82b366;fontSize=10;" parent="P1yoBSOdCuZ27dbMmFcD-84" vertex="1">
+                    <mxGeometry x="15" y="30" width="140" height="95" as="geometry"/>
+                </mxCell>
+                <mxCell id="P1yoBSOdCuZ27dbMmFcD-86" value="Claude Code / Codex" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="P1yoBSOdCuZ27dbMmFcD-85" vertex="1">
+                    <mxGeometry x="10" y="35" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="o7bFWhGSpsW3cH02EV6H-61" value="自宅WindowsPC" style="swimlane;startSize=24;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="80" width="230" height="325" as="geometry"/>
+                </mxCell>
+                <mxCell id="o7bFWhGSpsW3cH02EV6H-62" value="WezTerm（ターミナル）" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="o7bFWhGSpsW3cH02EV6H-61" vertex="1">
+                    <mxGeometry x="15" y="35" width="200" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="o7bFWhGSpsW3cH02EV6H-63" value="WSL2" style="swimlane;startSize=24;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" parent="o7bFWhGSpsW3cH02EV6H-61" vertex="1">
+                    <mxGeometry x="15" y="110" width="200" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="o7bFWhGSpsW3cH02EV6H-64" value="自宅Ubuntu (Linux)" style="swimlane;startSize=24;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;fontColor=#333333;" parent="o7bFWhGSpsW3cH02EV6H-63" vertex="1">
+                    <mxGeometry x="15" y="35" width="170" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="o7bFWhGSpsW3cH02EV6H-65" value="tmux" style="swimlane;startSize=22;fillColor=#e1f5e1;strokeColor=#82b366;fontSize=10;" parent="o7bFWhGSpsW3cH02EV6H-64" vertex="1">
+                    <mxGeometry x="15" y="30" width="140" height="95" as="geometry"/>
+                </mxCell>
+                <mxCell id="o7bFWhGSpsW3cH02EV6H-66" value="Claude Code / Codex" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="o7bFWhGSpsW3cH02EV6H-65" vertex="1">
+                    <mxGeometry x="10" y="35" width="120" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

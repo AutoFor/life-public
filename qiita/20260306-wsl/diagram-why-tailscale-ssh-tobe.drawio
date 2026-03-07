@@ -1,0 +1,57 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram name="ToBe_Tailscale SSHで自宅WSLに統一" id="0">
+    <mxGraphModel dx="880" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="60" edge="1" parent="1" source="D3TiIrnXB-2xKZYFwKeT-98" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;strokeWidth=2.5;fontSize=10;fontColor=#2d6a4f;fontStyle=1;exitX=0.515;exitY=1.01;exitDx=0;exitDy=0;exitPerimeter=0;" value="Tailscale 経由で自宅WSL Ubuntu の SSH に接続">
+          <mxGeometry relative="1" x="-0.4263" y="40" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="480" y="225" />
+              <mxPoint x="480" y="300" />
+            </Array>
+            <mxPoint x="430" y="237.5" as="sourcePoint" />
+            <mxPoint x="290" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="50" parent="1" style="ellipse;fillColor=#e8f4fd;strokeColor=#6c8ebf;strokeDasharray=6 3;fontSize=11;fontStyle=1;fontColor=#23527c;" value="Tailscale VPN" vertex="1">
+          <mxGeometry height="40" width="90" x="340" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="70" parent="1" style="rounded=1;fillColor=#e1f5e1;strokeColor=#82b366;fontSize=11;fontStyle=1;" value="外出先は接続クライアントのみ&#xa;待受/実行環境は自宅 Ubuntu 側に集約" vertex="1">
+          <mxGeometry height="60" width="250" x="350" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-85" parent="1" style="swimlane;startSize=26;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;fontColor=#333333;" value="自宅WindowsPC" vertex="1">
+          <mxGeometry height="330" width="280" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-86" parent="D3TiIrnXB-2xKZYFwKeT-85" style="swimlane;startSize=24;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="WSL2" vertex="1">
+          <mxGeometry height="220" width="250" x="15" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-87" parent="D3TiIrnXB-2xKZYFwKeT-86" style="swimlane;startSize=24;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Ubuntu (Linux)" vertex="1">
+          <mxGeometry height="170" width="220" x="15" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-88" parent="D3TiIrnXB-2xKZYFwKeT-87" style="rounded=1;fillColor=#e8f4fd;strokeColor=#6c8ebf;fontSize=10;" value="Tailscale + OpenSSH Server" vertex="1">
+          <mxGeometry height="40" width="190" x="15" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-89" parent="D3TiIrnXB-2xKZYFwKeT-87" style="swimlane;startSize=22;fillColor=#e1f5e1;strokeColor=#82b366;fontSize=10;" value="tmux" vertex="1">
+          <mxGeometry height="70" width="190" x="15" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-90" parent="D3TiIrnXB-2xKZYFwKeT-89" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="Claude Code / Codex" vertex="1">
+          <mxGeometry height="35" width="120" x="35" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-91" parent="D3TiIrnXB-2xKZYFwKeT-85" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="WezTerm（ターミナル）" vertex="1">
+          <mxGeometry height="45" width="220" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-92" parent="1" style="swimlane;startSize=24;fillColor=#f5f5f5;strokeColor=#999999;fontSize=10;" value="外出先WindowsノートPC" vertex="1">
+          <mxGeometry height="160" width="230" x="360" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-93" parent="D3TiIrnXB-2xKZYFwKeT-92" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="WezTerm（ターミナル）" vertex="1">
+          <mxGeometry height="55" width="210" x="10" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="D3TiIrnXB-2xKZYFwKeT-98" parent="D3TiIrnXB-2xKZYFwKeT-92" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="SSHクライアント" vertex="1">
+          <mxGeometry height="45" width="210" x="10" y="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
