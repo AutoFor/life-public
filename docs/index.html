@@ -89,6 +89,40 @@
         border-radius: 10px;
         border: 1px solid var(--border);
       }
+      .zoomable {
+        cursor: zoom-in;
+      }
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.82);
+        padding: 12px;
+        z-index: 9999;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lightbox img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        border: 0;
+        border-radius: 8px;
+      }
+      .lightbox-close {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        border: 0;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        background: #ffffff;
+        color: #111827;
+      }
     </style>
   </head>
   <body>
@@ -105,7 +139,7 @@
 
       <section class="card">
         <h2>間取り図</h2>
-        <img src="./2026-03-09_18h00_47.png" alt="横田保育園 間取り図" />
+        <img class="zoomable" src="./2026-03-09_18h00_47.png" alt="横田保育園 間取り図" />
         <p class="small">画像ファイルが未配置の場合は表示されません。</p>
       </section>
 
@@ -157,7 +191,7 @@
 
       <section class="card">
         <h2>翌朝 送り（8:30）</h2>
-        <img src="./2026-03-09_18h00_47.png" alt="横田保育園 間取り図" />
+        <img class="zoomable" src="./2026-03-09_18h00_47.png" alt="横田保育園 間取り図" />
         <ol>
           <li><strong>①PC打刻</strong>（入口左のパソコン）で <strong>1歳時→川島知隼→入室</strong></li>
           <li><strong>④荷物を置く</strong>（おむつ、連絡帳、お手拭きタオル）</li>
@@ -169,5 +203,42 @@
         </p>
       </section>
     </main>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+      <button class="lightbox-close" id="lightboxClose" type="button">閉じる</button>
+      <img id="lightboxImage" src="" alt="拡大画像" />
+    </div>
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const zoomableImages = document.querySelectorAll("img.zoomable");
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        lightboxImage.src = "";
+      };
+
+      zoomableImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          lightbox.classList.add("open");
+        });
+      });
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox || event.target === lightboxImage) {
+          closeLightbox();
+        }
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
+    </script>
   </body>
 </html>
