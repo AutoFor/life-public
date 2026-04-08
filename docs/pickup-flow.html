@@ -109,6 +109,11 @@
         border: 0;
         border-radius: 8px;
       }
+      .madori-link {
+        color: var(--accent);
+        text-decoration: underline;
+        cursor: pointer;
+      }
       .lightbox-close {
         position: fixed;
         top: 12px;
@@ -143,27 +148,41 @@
 
       <section class="card">
         <h2>手順</h2>
-        <h3>① 入口でPC打刻（図の①）</h3>
+        <h3>横田保育園に入る</h3>
+        <p>インターホンを押す必要はありません。お迎えはインターホン不要です。柵の扉は開いています。</p>
+        <img class="zoomable" src="./genkan1.jpg" alt="保育園入口" style="width: 40%; max-width: 200px;" />
+        <p>入口の扉は、子供が園から出ないよう上に鍵が掛かっています。閉める時も、内鍵をしてください。</p>
+        <img class="zoomable" src="./genkan2.jpg" alt="入口の鍵" style="width: 40%; max-width: 200px;" />
+
+        <h3>① 入口でPC打刻（<a href="#" class="madori-link">図の①</a>）</h3>
         <p>入口の左側にあるパソコンで、退勤打刻をしてください。</p>
         <p><span class="code">2歳児 → 川島知隼 → 退室</span></p>
+        <img class="zoomable" src="./PC.jpg" alt="PC打刻" style="width: 40%; max-width: 200px;" />
 
-        <h3>② 知隼をピックアップ（図の②）</h3>
+        <h3>② 知隼をピックアップ（<a href="#" class="madori-link">図の②</a>）</h3>
         <p>ファミサポが来ることを連絡帳に書いているので、「ファミサポです、ちはやくんを迎えに来ました」と言えば大丈夫です。</p>
 
-        <h3>③ 知隼がいる場所のお手拭きタオルと水筒を取る</h3>
+        <h3>③ 知隼がいる場所のお手拭きタオルと水筒を取る（<a href="#" class="madori-link">図の③</a>）</h3>
         <ul>
-          <li>お手拭きタオル（知隼がいる場所に掛かっています）※毎回変わるため画像なし</li>
+          <li>お手拭きタオル（知隼がいる場所に掛かっています）</li>
+        </ul>
+        <img class="zoomable" src="./himotsuki-taoru.jpg" alt="お手拭きタオル" style="width: 40%; max-width: 200px;" />
+        <ul>
           <li>水筒（水色のサーモス）</li>
         </ul>
+        <p class="small">水筒はこのようなカゴの中に入っています。</p>
+        <img class="zoomable" src="./suitou.jpg" alt="水筒のカゴ" style="width: 40%; max-width: 200px;" />
         <img class="zoomable" src="./PXL_20260405_104610232.jpg" alt="知隼の水筒（水色のサーモス）" style="width: 40%; max-width: 200px;" />
 
-        <h3>④ リュックを取る（図の④）</h3>
+        <h3>④ リュックを取る（<a href="#" class="madori-link">図の④</a>）</h3>
         <p>通路側にある知隼のリュックを忘れずに取ってください。</p>
         <p class="small">荷物の場所は、顔写真か名前が書いてある場所を見て確認してください。</p>
+        <img class="zoomable" src="./bagu-okiba.jpg" alt="荷物置き場" style="width: 40%; max-width: 200px;" />
         <img class="zoomable" src="./PXL_20260405_224311922.jpg" alt="知隼のリュック（モンスターズインク）" style="width: 40%; max-width: 200px;" />
 
-        <h3>⑤ 知隼の靴を取る（図の⑤）</h3>
-        <p>帰る前に、知隼の靴（名前が書いてあります）を忘れずに取ってください。※毎回変わるため画像なし</p>
+        <h3>⑤ 知隼の靴を取る（<a href="#" class="madori-link">図の⑤</a>）</h3>
+        <p>帰る前に、知隼の靴（名前が書いてあります）を忘れずに取ってください。</p>
+        <img class="zoomable" src="./kutsubako.jpg" alt="靴箱" style="width: 40%; max-width: 200px;" />
         <p>⚠️ 出口はGEO側です。入口（王将側）と間違えないようにご注意ください。</p>
       </section>
 
@@ -205,21 +224,41 @@
           lightboxImage.src = image.src;
           lightboxImage.alt = image.alt;
           lightbox.classList.add("open");
+          history.pushState({ lightbox: true }, "");
         });
       });
 
       lightbox.addEventListener("click", (event) => {
         if (event.target === lightbox || event.target === lightboxImage) {
+          history.back();
+        }
+      });
+
+      lightboxClose.addEventListener("click", () => {
+        history.back();
+      });
+
+      window.addEventListener("popstate", (event) => {
+        if (lightbox.classList.contains("open")) {
           closeLightbox();
         }
       });
 
-      lightboxClose.addEventListener("click", closeLightbox);
-
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          closeLightbox();
+        if (event.key === "Escape" && lightbox.classList.contains("open")) {
+          history.back();
         }
+      });
+
+      const madoriSrc = "./2026-03-09_18h00_47.png";
+      document.querySelectorAll(".madori-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          lightboxImage.src = madoriSrc;
+          lightboxImage.alt = "横田保育園 間取り図";
+          lightbox.classList.add("open");
+          history.pushState({ lightbox: true }, "");
+        });
       });
     </script>
   </body>
